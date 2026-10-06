@@ -1,10 +1,9 @@
 # trex_research
-
-Git ve GitHub nedir?
+## 1. Modern Yazılım Geliştirme Pratikleri
+### Git ve GitHub nedir?
 Git: yapılan değişiklikleri takip eden ve projenin farklı sürümlerini saklamayı sağlayan yerel (local) bir versiyon kontrol sistemidir. Örneğin, Version A Git'e kaydedildikten sonra Version B'de bir sorun oluşursa, önceki Version A'ya geri dönülebilir.
 GitHub: Git ile yönetilen projeleri internet üzerinde saklamaya, paylaşmaya ve ekip halinde geliştirmeye yarayan uzak repository platformudur. GitHub'da yapılan değişiklikler proje sahibine gönderilir. Proje sahibi değişiklikleri kabul ederse main repo ile merge yapılır ve yapılan değişiklikler ana projeye eklenmiş olur. Kabul etmezse değişiklikler reddedilir.
-
-Git komutlarının kısa açıklamaları:
+### Git komutlarının kısa açıklamaları:
 git init: Bir klasorde Git'i baslatilir ve klasoru Git repository'si haline getiriyor.
 git clone: proje dosyalarini bilgisayara kopyalar/indirir ve o proje dosyalarina degistirme gelistirme yapmamiza olanak sagliyor.
 git add: bir sonraki komut icin dosyalari hazirliyor.
@@ -14,13 +13,13 @@ git pull: Repository deki guncel degisiklikleri bilgisayar ceker.
 git branch: ana proje den bagimsiz bir calisma yada gelistirme Alani olusturur.
 git merge: bir branch takti degisiklikleri farkli bir branch ile birlestirir.
 
-Merge Conflict nedir?
+### Merge Conflict nedir?
 İki branch'te aynı yerde farklı değişiklikler yapılması durumunda branch'leri birleştirirken çakışma oluşur. Bu duruma merge conflict denir. otomatik olarak Git'in branch'leri  birleştirmeyi reddetmesi durumudur.
 
 Çözümü: Çakışan bölge manuel olarak düzeltilir ve hangi değişikliklerle devam edileceğine karar verilir. Daha sonra 'git add .' ve 'git commit' komutları girilerek değişiklikler kaydedilir ve sorun çözülmüş olur.
 
 
-CI/CD nedir?
+### CI/CD nedir?
 CI, sürekli entegrasyon anlamına geliyor. Yapılan kod değişikliklerinde otomatik olarak build ve test işlemlerini gerçekleştiriyor. Bunun avantajı, hataları daha hızlı fark etmemizi ve bu sayede fazla zaman kaybetmememizi sağlamasıdır. Örneğin A kişisi yeni bir API üzerinde çalışırken, diğer kişi farklı bir UI üzerinde çalışıyor olabilir. CI olmasaydı, bu iki farklı çalışmanın birleştirilmesi sırasında oluşan hatalar çok daha geç fark edilebilirdi. Bu hataları sonradan düzeltmek ise hem maliyetli olabilir hem de çok fazla zaman kaybettirebilir.
 
 CD, CI aşamasındaki build ve test işlemlerinden sonra başarılı olan kodun yayınlanmasını veya yayınlanmaya hazır hale getirilmesini sağlar. Yani kodun otomatik olarak sunucuya gönderilmesi ve kullanıma açılması gibi işlemleri gerçekleştirebilir.
@@ -28,25 +27,21 @@ CD, CI aşamasındaki build ve test işlemlerinden sonra başarılı olan kodun 
 SDLC adımlarının tanımı ve yazılımcının süreçteki yeri nedir?
 bir yazılımın fikir aşamasından başlayıp geliştirilmesi, test edilmesi, kullanıma sunulması ve bakımının yapılmasına kadar geçen tüm süreci ifade eder.
 
-2. .NET Ekosistemi
+## 2. .NET Ekosistemi
 .NET nedir? Tarihçesi, amacı, neden kullanılır?
 .NET, Microsoft tarafından geliştirilen, uygulama geliştirmek için kullanılan açık kaynaklı ve platformlar arası bir yazılım geliştirme platformudur. C# gibi dillerle web, masaüstü, mobil ve API uygulamaları geliştirmek için kullanılır. Yüksek performans, güvenilirlik ve farklı işletim sistemlerinde çalışabilme gibi avantajları nedeniyle tercih edilir.
 
 .NET Framework, .NET Core ve .NET 7/8+ farkları nelerdir ve Platformlar arası çalışabilir mi? (Windows, Linux, macOS)
 .NET Framework, eski nesil ve yalnızca Windows üzerinde çalışan .NET platformudur; .NET Core, açık kaynaklı ve Windows, Linux, macOS gibi farklı platformlarda çalışabilen modern versiyondur; .NET 7/8+ ise .NET Core'un devamı olan güncel .NET sürümleridir ve daha yüksek performans ile yeni özellikler sunar.
 
-
-
-
-Bilgisayarimdan dotnet --info çıktısı örneği:
- 
+### Bilgisayarimdan dotnet --info çıktısı örneği:
 SDK Version: Proje geliştirmek için kullanılan .NET sürümü.
 OS Name: İşletim sistemi.
 Architecture: Sistemin mimarisi (x64, x86, ARM64).
- ASP.NET Core Runtime: ASP.NET Core uygulamalarını çalıştırmak için gerekli ortam.
+ASP.NET Core Runtime: ASP.NET Core uygulamalarını çalıştırmak için gerekli ortam.
 .NETCore Runtime: .NET uygulamalarını çalıştırmak için gerekli ortam.
 
-Senkron / Asenkron Örnek Senaryo
+### Senkron / Asenkron Örnek Senaryo
 Senkron: Bir işlem bitmeden sonraki işlem başlamaz. Örneğin bir web sitesinde veritabanından kullanıcı bilgisi istenir; sistem cevabı bekler ve cevap geldikten sonra diğer işlemlere devam eder.
 Asenkron: Bir işlem devam ederken program başka işlemleri yapabilir. Örneğin kullanıcı bilgisi veritabanından alınırken uygulama başka işlemleri gerçekleştirebilir; veri geldiğinde ilgili işlem devam eder.
 1.	async : Bu işlem zaman alabilir, asenkron çalışabilir. der.
@@ -54,29 +49,29 @@ Asenkron: Bir işlem devam ederken program başka işlemleri yapabilir. Örneği
 3.	Task : Şu anda devam eden bir işlem var. bilgisini temsil eder.
 4.	ConfigureAwait(false) : “İşlem bitince eski çalışma ortamına dönmene gerek yok.” demektir.
 5.	=> : Kısa bir fonksiyon yazmanın yoludur. Örneğin x => x * 2 → “x'i al, 2 ile çarp.”
-Backend ve Frontend
+
+## 3.Backend Geliştirme Temelleri
+### Backend ve Frontend:
 Frontend, kullanıcının gördüğü ve etkileşimde bulunduğu arayüz kısmıdır. Örneğin HTML, CSS ve JavaScript kullanılır.
 Backend, uygulamanın arka planda çalışan kısmıdır. Veritabanı işlemleri, kullanıcı girişi, API'ler ve iş kuralları burada yönetilir. Örneğin C#, .NET, Java, Python gibi teknolojiler kullanılabilir.
 Web Sunucusu, API ve API Türleri
 Web sunucusu, web sitelerinden veya uygulamalardan gelen istekleri karşılayan ve gerekli verileri geri gönderen sistemdir.
 API, farklı yazılımların birbirleriyle iletişim kurmasını sağlayan arayüzdür. Örneğin frontend, backend'e API üzerinden "ürünleri getir" isteği gönderir ve backend verileri JSON olarak döndürür.
-HTTP ve HTTP Metodları:
+
+### HTTP ve HTTP Metodları:
 HTTP, istemci (Frontend) ile sunucu (Backend) arasında veri alışverişini sağlayan iletişim protokolüdür.
 GET: Veri almak için kullanılır. Örn: GET /products → Ürünleri getirir.
 POST: Yeni veri oluşturmak için kullanılır. Örn: POST /products → Yeni ürün ekler.
 PUT: Mevcut veriyi güncellemek için kullanılır. Örn: PUT /products/5 → 5 numaralı ürünü günceller.
 DELETE: Veri silmek için kullanılır. Örn: DELETE /products/5 → 5 numaralı ürünü siler.
 
-RESTful servislerin çalışma mantığı nedir?
+### RESTful servislerin çalışma mantığı nedir?
 RESTful servis, istemci (Frontend) ile (Backend) HTTP üzerinden iletişim kurmasını sağlayan API yapısıdır. İstemci GET, POST, PUT, DELETE gibi HTTP metodlarıyla istek gönderir, Backend bu isteği işler ve genellikle JSON formatında cevap döndürür. Örneğin GET /products → ürünleri getirir, POST /products → yeni ürün oluşturur.
-JSON veri formatı ve kullanım amacı nedir?
+
+### JSON veri formatı ve kullanım amacı nedir?
 JSON uygulamalar arasında veri alışverişi yapmak için kullanılan hafif ve hızlı okunabilir bir veri formatıdır. Özellikle API'lerde verileri frontend ve backend arasında göndermek için kullanılır.
 
-
-
-
-
-JSON veri örneği açıklaması:
+#### JSON veri örneği açıklaması:
 {
   "id": 1,
   "name": "Laptop",
@@ -84,31 +79,30 @@ JSON veri örneği açıklaması:
 }
 Burada id, name ve price veri alanlarını; 1, "Laptop" ve 25000 ise bu alanların değerlerini ifade eder.
 
-SOAP ve GraphQL nedir, REST’ten farkları nelerdir ve temel karşılaştırması?
-
+### SOAP ve GraphQL nedir, REST’ten farkları nelerdir ve temel karşılaştırması?
 REST: HTTP metodlarını kullanarak istemci ve sunucu arasında veri alışverişi yapan, basit ve yaygın bir API yaklaşımıdır.
 SOAP: XML tabanlı, belirli kurallara sahip ve daha katı bir web servis protokolüdür.
 GraphQL: İstemcinin ihtiyaç duyduğu verileri kendisinin seçerek almasını sağlayan bir API teknolojisidir.
 
-ASP.NET
-ASP.NET ve ASP.NET Core nedir? Avantajları, farkları.
+## 4.ASP.NET
+### ASP.NET ve ASP.NET Core nedir? Avantajları, farkları.
 ASP.NET, .NET Framework üzerinde web uygulamaları geliştirmek için kullanılan, Windows odaklı eski bir web framework'üdür; ASP.NET Core ise modern .NET üzerinde çalışan, açık kaynaklı, yüksek performanslı ve Windows, Linux, macOS gibi farklı platformlarda çalışabilen web framework'üdür. Her ikisi de web uygulaması ve API geliştirmek için kullanılır; temel fark ASP.NET'in eski ve Windows odaklı, ASP.NET Core'un ise modern ve platformlar arası olmasıdır.
 
-MVC nedir, ne için kullanılır?
+### MVC nedir, ne için kullanılır?
 MVC (Model-View-Controller), uygulamanın kodlarını Model, View ve Controller olmak üzere üç bölüme ayıran bir tasarım yaklaşımıdır. Model verileri ve iş mantığını, View kullanıcının gördüğü arayüzü, Controller ise gelen istekleri ve Model-View arasındaki iletişimi yönetir.
 
 Örnek olarak MVC ile iligli: 
 Kullanıcı: "Ürünleri göster." Buttonun’a basar.
 Controller bu isteği alır → Model'den ürünleri ister → sonucu View'a gönderir.
 
-Middleware, gelen HTTP istekleri ile uygulamanın asıl işlemleri arasında çalışan ara katmandır; istekleri kontrol eder ve gerektiğinde işlem yapar. Örneğin kullanıcının giriş yapıp yapmadığını, ve yetkisini kontrol eder Middleware.
+### Middleware, gelen HTTP istekleri ile uygulamanın asıl işlemleri arasında çalışan ara katmandır; istekleri kontrol eder ve gerektiğinde işlem yapar. Örneğin kullanıcının giriş yapıp yapmadığını, ve yetkisini kontrol eder Middleware.
 
-Startup.cs ya da Program.cs içindeki middleware sıralamasının açıklaması
+### Startup.cs ya da Program.cs içindeki middleware sıralamasının açıklaması
 Middleware, ASP.NET Core'da gelen isteklerin hangi sırayla işleneceğini belirler. Örneğin UseHttpsRedirection() → HTTPS'e yönlendirir, UseAuthentication() → kullanıcının kimliğini kontrol eder, UseAuthorization() → yetkisini kontrol eder ve MapControllers() → isteği ilgili Controller'a gönderir. Sıralama önemlidir, çünkü middleware'ler yazıldıkları sırayla çalışır.
 
-Dependency Injection (DI), bir sınıfın ihtiyaç duyduğu başka sınıfları kendi oluşturmak yerine dışarıdan almasını sağlayan yapıdır.
+### Dependency Injection (DI), bir sınıfın ihtiyaç duyduğu başka sınıfları kendi oluşturmak yerine dışarıdan almasını sağlayan yapıdır.
 
-Middleware ile ilgli akış diyagramı:
+#### Middleware ile ilgli akış diyagramı:
 Controller
 ↓
 "ProductService'e ihtiyacım var."
@@ -119,7 +113,8 @@ DI Container
 ↓
 Controller
 
-SQL Nedir?
+## 5. Veritabanı ve ORM
+### SQL Nedir?
 SQL, veritabanındaki verileri eklemek, okumak, güncellemek ve silmek için kullanılan bir sorgulama dilidir. Örneğin SELECT ile veri getirir, INSERT ile veri ekler, UPDATE ile günceller, DELETE ile siler.
 
 
@@ -128,10 +123,9 @@ SQL, veritabanındaki verileri eklemek, okumak, güncellemek ve silmek için kul
 
 İlişkisel veritabanları (SQL) verileri tablo, satır ve sütunlar şeklinde düzenler ve tablolar arasında ilişkiler kurar. İlişkisel olmayan veritabanları (NoSQL) ise verileri tablo yerine doküman, key-value, grafik veya kolon gibi farklı yapılarda saklar ve daha esnek bir veri yapısı sunar.
 
-ORM nedir? Entity Framework Core nedir? 
+### ORM nedir? Entity Framework Core nedir? 
 Örneğin veritabanında:
-
-Products tablosu
+#### Products tablosu
 ----------------
 Id
 Name
@@ -150,7 +144,7 @@ ORM = Veritabanı ile kod arasında köprü
 EF Core = Bu köprüyü .NET'te sağlayan araç
 
 
-LINQ (Language Integrated Query), C# içinde koleksiyonlar veya veritabanındaki veriler üzerinde sorgulama ve işlem yapmayı sağlayan yapıdır
+#### LINQ (Language Integrated Query), C# içinde koleksiyonlar veya veritabanındaki veriler üzerinde sorgulama ve işlem yapmayı sağlayan yapıdır
 1.	Where() : Belirli şartlara uyan verileri getirir.
 2.	Select() : Verilerden istenen alanları seçer.
 3.	OrderBy() : Verileri küçükten büyüğe sıralar.
@@ -163,30 +157,27 @@ LINQ (Language Integrated Query), C# içinde koleksiyonlar veya veritabanındaki
 10.	ToList() : Sonucu listeye dönüştürür.
 
 
-Code-First vs DB-First karşılaştırması 
+#### Code-First vs DB-First karşılaştırması 
 Code-First	       DB-First
 Önce C# kodu	       Önce veritabanı
 Kod → Veritabanı	       Veritabanı → Kod
 EF Core ile veritabanı oluşturulabilir	.      Mevcut veritabanıyla çalışmak için uygundur
 
-4 temel SQL sorgusuna örnekleri:
+#### 4 temel SQL sorgusuna örnekleri:
 SELECT = Getir | INSERT = Ekle | UPDATE = Güncelle | DELETE = Sil.
 SELECT * FROM Products;
 INSERT INTO Products (Name, Price) VALUES ('Laptop', 25000);
 UPDATE Products SET Price = 27000 WHERE Id = 1;
 DELETE FROM Products WHERE Id = 1;
 
-
-
-
-
-JWT'nin Temel Bileşenleri
+## 6. Güvenlik ve Performans
+### JWT'nin Temel Bileşenleri
 1. Header: Token'ın türünü ve kullanılan şifreleme algoritmasını belirtir.
 2. Payload: Kullanıcı ID'si, rolü, token'ın süresi gibi bilgileri içerir.
 3. Signature: Token'ın değiştirilmediğini doğrulamak için kullanılır.
 Yapısı: Header.Payload.Signature   
 
-Performans için önerilen en az 3 teknik ve açıklamaları:
+### Performans için önerilen en az 3 teknik ve açıklamaları:
 •	AsNoTracking() → EF Core'da sadece veri okuyorsan, değişiklik takibini kapatarak sorguyu hızlandırır.
 •	IAsyncEnumerable → Büyük verileri tamamen belleğe almak yerine parça parça ve asenkron işlemeyi sağlar.
 •	Caching → Sık kullanılan verileri tekrar tekrar veritabanından almak yerine geçici olarak saklayarak erişimi hızlandırır.
@@ -199,8 +190,7 @@ Caching → Veriyi hazır tut
 Profiling → Yavaş noktayı bul
 Redis → Hızlı cache kullan
 
-OWASP Top 10
-
+### OWASP Top 10
 Neden loglama yapılır? Log seviyesi nedir?
 Loglama, uygulamada gerçekleşen olayları kaydetmek için yapılır; hata bulma, sorunları takip etme, güvenlik olaylarını inceleme ve uygulamanın durumunu izleme amacıyla kullanılır. Log seviyesi, kaydedilen olayın önem derecesini belirtir.
 Yaygın log seviyeleri:
@@ -218,10 +208,9 @@ LogWarning: Dikkat edilmesi gereken durumu kaydeder.
 LogError: Hata oluştuğunu kaydeder.
 LogCritical: Çok ciddi bir hata olduğunu kaydeder.
 
-
 Logging = Uygulamada ne olduğunu ve hangi hataların oluştuğunu kayıt altına almak.
 
-Örnek Hata Yönetimi:
+## 7.Örnek Hata Yönetimi:
 try
 {
     // Hata oluşabilecek kod
@@ -236,10 +225,8 @@ catch: Hata oluşursa yakalanır.
 Exception ex: Oluşan hata hakkında bilgi tutar.
 ILogger: Hata bilgisini loglayarak kayıt altına alır.
 
-
-
-SOLID prensipleri: Her biri için kısa açıklama ve örnek
-
+## 8. Yazılım Geliştirme Prensipleri
+### SOLID prensipleri, Her biri için kısa açıklama ve örnek
 SOLID Prensipleri: Yazılımın daha anlaşılır, sürdürülebilir, esnek ve geliştirilebilir olmasını sağlayan 5 temel prensiptir.
 1. S - Single Responsibility Principle (Tek Sorumluluk):
 Bir sınıfın sadece bir sorumluluğu olmalıdır.
@@ -277,14 +264,12 @@ L: Alt sınıf, üst sınıfın yerine geçebilmeli
 I: Küçük ve amaca yönelik interface
 D: Interface/abstraction'a bağımlı ol
 
-Design Patterns: Yazılımda sık karşılaşılan problemlere tekrar kullanılabilir çözüm sunan tasarım kalıplarıdır.
+### Design Patterns: Yazılımda sık karşılaşılan problemlere tekrar kullanılabilir çözüm sunan tasarım kalıplarıdır.
 
 1. Singleton Pattern:
 Bir sınıftan uygulama boyunca sadece bir tane nesne oluşturulmasını sağlar.
 Örnek:
 Bir uygulamada tek bir ConfigurationManager nesnesinin kullanılması.
-
-
 
 2. Repository Pattern:
 Veritabanı işlemlerini uygulamanın diğer bölümlerinden ayırır.
@@ -301,8 +286,7 @@ Singleton: Tek nesne oluştur.
 Repository: Veritabanı işlemlerini ayır.
 Factory: Uygun nesneyi oluştur.
 
-
-Clean Code: Okunması, anlaşılması, test edilmesi ve değiştirilmesi kolay olan temiz ve düzenli kod yazma yaklaşımıdır.
+### Clean Code: Okunması, anlaşılması, test edilmesi ve değiştirilmesi kolay olan temiz ve düzenli kod yazma yaklaşımıdır.
 Neden önemlidir?
 Kodun okunabilirliğini artırır, hataları azaltır, bakım ve geliştirme işlemlerini kolaylaştırır ve ekip çalışmasını daha verimli hale getirir.
 Clean Code Uygulama Örnekleri:
